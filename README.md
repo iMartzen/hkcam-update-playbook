@@ -8,7 +8,7 @@ I've made an [Ansible](http://docs.ansible.com/ansible/index.html) playbook to u
 - Github: [https://github.com/brutella/hkcam](https://github.com/brutella/hkcam)
 
 ## Instructions 
-1. Configure the hosts file [hosts file](../blob/master/hosts) with your hostname/ipaddress 
+1. Configure the hosts file [hosts file](blob/master/hosts) with your hostname/ipaddress 
 2. Configure the variables in the main.yml 
     - hkcam_version
     - download_destination
