@@ -14,13 +14,12 @@ I've made an [Ansible](http://docs.ansible.com/ansible/index.html) playbook to u
 4. Configure the variables in the [main.yml](../../blob/master/main.yml)
     - hkcam_version
     - download_destination
-5. Change directory to hkcam-update-playbook
-6. Run the playbook with this command: 
+5. Run the playbook with this command: 
 ```bash
 ansible-playbook main.yml -i hosts --ask-pass
 ```
-7. The prompt for password is the password of your raspberry 
-8. The playbook is finished when you see this:
+6. The prompt for password is the password of your raspberry 
+7. The playbook is finished when you see this:
 ```bash
 PLAY RECAP **********************************************************************
 raspberrypi.local                : ok=8    changed=7    unreachable=0    failed=0
