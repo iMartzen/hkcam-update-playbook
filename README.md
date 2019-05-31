@@ -9,7 +9,7 @@ I've made an [Ansible](http://docs.ansible.com/ansible/index.html) playbook to u
 
 ## Instructions 
 1. Configure the hosts file [hosts file](../../blob/master/hosts) with your hostname/ipaddress 
-2. Configure the variables in the main.yml 
+2. Configure the variables in the [main.yml](../../blob/master/main.yml)
     - hkcam_version
     - download_destination
 3. Run the playbook with this command: 
