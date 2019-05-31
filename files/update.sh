@@ -10,3 +10,6 @@ tar -xvf hkcam-${LATEST}_linux_armhf.tar.gz
 sudo sv stop hkcam
 sudo cp hkcam-${LATEST}_linux_armhf/usr/bin/hkcam /usr/bin
 sudo sv start hkcam
+rm hkcam*.gz
+rm -rf hkcam-*_linux_armhf
+rm update.sh
