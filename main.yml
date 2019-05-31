@@ -1,36 +1,17 @@
-- name: replace binary on raspberry pi 
+- name: Replace binary to the latest on Raspberry Pi 
   hosts: rpi
   user: pi 
   gather_facts: yes
   
   vars:
-    hkcam_version: 'v0.0.7'
     hkcam_download_dir: /home/pi
 
-  tasks: 
-    - name: Download latest release
-      get_url:
-        url: "https://github.com/brutella/hkcam/releases/download/{{ hkcam_version }}/hkcam-{{ hkcam_version }}_linux_armhf.tar.gz"
+  tasks:
+    - name: Copy shellscript to Raspberry Pi
+      copy: 
+        src: files/update.sh
         dest: "{{ hkcam_download_dir }}"
         mode: u=rwx,g=rwx,o=r
-    - name: Extract tar into {{ hkcam_download_dir }}
-      unarchive:
-        src: "{{ hkcam_download_dir }}/hkcam-{{ hkcam_version }}_linux_armhf.tar.gz"
-        dest: "{{ hkcam_download_dir }}"
-        remote_src: yes
-    - name: Stop hkcam
-      shell: sv stop hkcam
-      become: yes
-    - name: Move hkcam binary to /usr/bin   
-      shell: mv {{ hkcam_download_dir }}/hkcam-{{ hkcam_version }}_linux_armhf/usr/bin/hkcam /usr/bin/
-      become: yes 
-    - name: Start hkcam
-      shell: sv start hkcam
-      become: yes
-    - name: Delete files from home folder 
-      file: 
-        path: "{{ hkcam_download_dir }}/hkcam-{{ hkcam_version }}_linux_armhf"
-        state: absent
-    - file: 
-        path: "{{ hkcam_download_dir }}/hkcam-{{ hkcam_version }}_linux_armhf.tar.gz"
-        state: absent
+    
+    - name: Execute update.sh
+      shell: sh update.sh
