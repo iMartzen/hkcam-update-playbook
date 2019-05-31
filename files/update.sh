@@ -20,5 +20,4 @@ else
   sudo cp hkcam-${LATEST}_linux_armhf/usr/bin/hkcam /usr/bin
   rm -rf hkcam-*_linux_armhf
   sudo sv start hkcam
-  rm update.sh
 fi
