@@ -25,8 +25,8 @@ raspberrypi.local                : ok=3    changed=1    unreachable=0    failed=
 ```
 ## What does this playbook? 
 1. Copy a bash file to the raspberry server
-3. Make an cronjob for checking for updates daily
-2. Executes this bashfile; this is in the bashfile:
+2. Make an cronjob for checking for updates daily
+3. Executes this bashfile; this is in the bashfile:
     1. It will download the latest version
     2. Unarchive the archive 
     3. Stop the hkcam 
